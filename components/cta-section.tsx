@@ -3,21 +3,43 @@
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 import Link from "next/link"
+import { useState } from "react"
+import { Volume2, VolumeX } from "lucide-react"
 
 export function CtaSection() {
+    const [isMuted, setIsMuted] = useState(true)
+
+    const toggleMute = () => {
+        setIsMuted(!isMuted)
+    }
+
     return (
         <section className="py-32 relative overflow-hidden bg-background">
 
             {/* Video Background */}
-            <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-                <div className="absolute inset-0 bg-black/40 z-10" /> {/* Overlay for readability */}
+            <div className="absolute inset-0 z-0 overflow-hidden">
+                <div className="absolute inset-0 bg-black/40 z-10 pointer-events-none" /> {/* Overlay for readability */}
                 <iframe
-                    className="w-full h-[150%] md:h-full w-[150%] md:w-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-cover min-w-full min-h-full"
-                    src="https://www.youtube.com/embed/exd1_sRTsxg?autoplay=1&mute=1&controls=0&loop=1&playlist=exd1_sRTsxg&playsinline=1&showinfo=0&rel=0"
+                    key={isMuted ? "muted" : "unmuted"} // Key change forces re-render to apply mute param immediately
+                    className="w-full h-[150%] md:h-full w-[150%] md:w-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-cover min-w-full min-h-full pointer-events-none"
+                    src={`https://www.youtube.com/embed/exd1_sRTsxg?autoplay=1&mute=${isMuted ? 1 : 0}&controls=0&loop=1&playlist=exd1_sRTsxg&playsinline=1&showinfo=0&rel=0`}
                     title="Calm Nature Background"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                 />
+            </div>
+
+            {/* Sound Control Button */}
+            <div className="absolute bottom-8 right-8 z-30">
+                <Button
+                    variant="outline"
+                    size="icon"
+                    className="bg-black/20 border-white/20 text-white hover:bg-black/40 hover:text-white rounded-full backdrop-blur-sm"
+                    onClick={toggleMute}
+                >
+                    {isMuted ? <VolumeX className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
+                    <span className="sr-only">{isMuted ? "Unmute Video" : "Mute Video"}</span>
+                </Button>
             </div>
 
             {/* Decorative Lines */}
