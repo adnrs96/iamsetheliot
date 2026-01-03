@@ -13,7 +13,7 @@ export function CtaSection() {
                 <div className="absolute inset-0 bg-black/40 z-10" /> {/* Overlay for readability */}
                 <iframe
                     className="w-full h-[150%] md:h-full w-[150%] md:w-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-cover min-w-full min-h-full"
-                    src="https://www.youtube.com/embed/exd1_sRTsxg?autoplay=1&mute=0&controls=0&loop=1&playlist=exd1_sRTsxg&playsinline=1&showinfo=0&rel=0"
+                    src="https://www.youtube.com/embed/exd1_sRTsxg?autoplay=1&mute=1&controls=0&loop=1&playlist=exd1_sRTsxg&playsinline=1&showinfo=0&rel=0"
                     title="Calm Nature Background"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
