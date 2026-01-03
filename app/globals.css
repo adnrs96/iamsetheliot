@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-playfair);
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+/* Calm Authority Theme - Light Mode Default */
+:root {
+  /* Warm Off-White Background */
+  --background: #FCFBF8;
+  /* Deep Slate Charcoal Text */
+  --foreground: #2E2E2E;
+
+  /* Soft Card Background (Clean White) */
+  --card: #FFFFFF;
+  --card-foreground: #2E2E2E;
+
+  --popover: #FFFFFF;
+  --popover-foreground: #2E2E2E;
+
+  /* Muted Sage Green (Trust & Calm) */
+  --primary: #8B9470;
+  --primary-foreground: #FFFFFF;
+
+  /* Light Taupe / Sand */
+  --secondary: #EAE2D6;
+  --secondary-foreground: #2E2E2E;
+
+  --muted: #F5F2EB;
+  --muted-foreground: #6B6B6B;
+
+  /* Warm Amber (Accents) */
+  --accent: #D8A059;
+  --accent-foreground: #FFFFFF;
+
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: #E5E0D8;
+  --input: #E5E0D8;
+  --ring: #8B9470;
+
+  --radius: 0.75rem;
+}
+
+/* Ensure Dark Mode also follows Light Editorial Theme (User Request: No Dark Mode) */
+.dark {
+  --background: #FCFBF8;
+  --foreground: #2E2E2E;
+  --card: #FFFFFF;
+  --card-foreground: #2E2E2E;
+  --popover: #FFFFFF;
+  --popover-foreground: #2E2E2E;
+  --primary: #8B9470;
+  --primary-foreground: #FFFFFF;
+  --secondary: #EAE2D6;
+  --secondary-foreground: #2E2E2E;
+  --muted: #F5F2EB;
+  --muted-foreground: #6B6B6B;
+  --accent: #D8A059;
+  --accent-foreground: #FFFFFF;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: #E5E0D8;
+  --input: #E5E0D8;
+  --ring: #8B9470;
+}
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-playfair);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.01em;
+}
+
+/* Soft Editorial Utilities */
+.soft-shadow {
+  box-shadow: 0 4px 20px -2px rgba(46, 46, 46, 0.05);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.container-wide {
+  max-width: 1400px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
