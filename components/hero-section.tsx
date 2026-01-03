@@ -51,7 +51,7 @@ export function HeroSection() {
                         className="relative h-full w-full max-w-[600px] overflow-hidden"
                     >
                         <Image
-                            src="/seth-hero-calm.png"
+                            src="/seth-hero-final.png"
                             alt="Seth Eliot Santoro - Calm Authority"
                             fill
                             className="object-cover object-top rounded-t-[200px] md:rounded-t-none md:rounded-tl-[300px] shadow-none"
